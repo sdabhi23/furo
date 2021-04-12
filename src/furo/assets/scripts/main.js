@@ -85,9 +85,42 @@ function setupScrollSpy() {
   });
 }
 
+function loadPygments() {
+  fetch("/_static/pygments.css")
+    .then((res) => res.text())
+    .then((res) =>
+      res
+        .split("\n")
+        .map((elem) => ".light " + elem)
+        .join("\n")
+    )
+    .then((res) => {
+      var styleSheet = document.createElement("style");
+      styleSheet.innerText = res;
+      document.head.appendChild(styleSheet);
+      console.log(styleSheet);
+    });
+
+  fetch("/_static/pygments_dark.css")
+    .then((res) => res.text())
+    .then((res) =>
+      res
+        .split("\n")
+        .map((elem) => ".dark " + elem)
+        .join("\n")
+    )
+    .then((res) => {
+      var styleSheet = document.createElement("style");
+      styleSheet.innerText = res;
+      document.head.appendChild(styleSheet);
+      console.log(styleSheet);
+    });
+}
+
 function setup() {
   setupScrollHandler();
   setupScrollSpy();
+  loadPygments();
 }
 
 function main() {
