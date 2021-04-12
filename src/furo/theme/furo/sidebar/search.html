@@ -1,5 +1,12 @@
-<form class="sidebar-search-container" method="get" action="{{ pathto('search') }}">
-  <input class="sidebar-search" placeholder={{ _("Search") }} name="q">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form>
+<div>
+  <button onclick="toggleTheme()" class="theme-toggle">Toggle Theme</button>
+  <form
+    class="sidebar-search-container"
+    method="get"
+    action="{{ pathto('search') }}"
+  >
+    <input class="sidebar-search" placeholder={{ _("Search") }} name="q">
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
