@@ -4,26 +4,22 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Recommendations" href="../../recommendations/" /><link rel="prev" title="Tables" href="../tables/" />
 
-    <meta name="generator" content="sphinx-3.5.3, furo 2021.04.11.dev35"/>
+    <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.dev35"/>
         <title>Tabs - Furo</title>
-      <link rel="stylesheet" href="../../_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
-    <link rel="stylesheet" href="../../_static/pygments.css">
-    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="../../_static/pygments_dark.css">
+      <link rel="stylesheet" href="../../_static/styles/furo.css?digest=f6a7a815595213d77ba9f22adfa6c6431b72e05f">
     
 
 
 <style>
-  :root {
+  .light {
     --color-code-background: #f8f8f8;
   --color-code-foreground: black;
   
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --color-code-background: #202020;
+  .dark {
+    --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
   
-    }
   }
 
   /* For allowing end-user-specific overrides */
@@ -104,11 +100,18 @@
   
   <span class="sidebar-brand-text">Furo</span>
   
-</a><form class="sidebar-search-container" method="get" action="../../search/">
-  <input class="sidebar-search" placeholder=Search name="q">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form><div class="sidebar-scroll"><div class="sidebar-tree">
+</a><div>
+  <button onclick="toggleTheme()" class="theme-toggle">Toggle Theme</button>
+  <form
+    class="sidebar-search-container"
+    method="get"
+    action="../../search/"
+  >
+    <input class="sidebar-search" placeholder=Search name="q">
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart/">Quickstart</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../customisation/">Customisation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -177,7 +180,7 @@
 </div>
 <div class="docutils container">
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"/><label class="tab-label" for="tab-set--0-input--1">reStructuredText</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"/><label class="tab-label" for="tab-set--2-input--1">reStructuredText</label><div class="tab-content docutils container">
 <div class="highlight-rest notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">tab</span><span class="p">::</span> One
 
     First.
@@ -188,17 +191,15 @@
 </pre></div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"/><label class="tab-label" for="tab-set--1-input--1">One</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"/><label class="tab-label" for="tab-set--0-input--1">One</label><div class="tab-content docutils container">
 <p>First.</p>
 </div>
-<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"/><label class="tab-label" for="tab-set--1-input--2">Two</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"/><label class="tab-label" for="tab-set--0-input--2">Two</label><div class="tab-content docutils container">
 <p>Second.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"/><label class="tab-label" for="tab-set--2-input--1">Markdown (MyST)</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"/><label class="tab-label" for="tab-set--2-input--2">Markdown (MyST)</label><div class="tab-content docutils container">
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{tab} One
 First.
 <span class="sb">```</span>
@@ -209,10 +210,10 @@ First.
 </pre></div>
 </div>
 <div class="tab-set docutils container">
-<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"/><label class="tab-label" for="tab-set--3-input--1">One</label><div class="tab-content docutils container">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"/><label class="tab-label" for="tab-set--1-input--1">One</label><div class="tab-content docutils container">
 <p>First.</p>
 </div>
-<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"/><label class="tab-label" for="tab-set--3-input--2">Two</label><div class="tab-content docutils container">
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"/><label class="tab-label" for="tab-set--1-input--2">Two</label><div class="tab-content docutils container">
 <p>Second.</p>
 </div>
 </div>
@@ -277,5 +278,5 @@ First.
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="../../_static/tabs.js"></script>
-    <script src="../../_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></body>
+    <script src="../../_static/scripts/main.js?digest=dba1104e84029c9bbe823ec0500d3360bfc27ba2"></script></body>
 </html>
