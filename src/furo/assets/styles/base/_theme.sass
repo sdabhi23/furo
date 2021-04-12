@@ -128,12 +128,13 @@ a
   color: var(--color-problematic)
 
 // For items that need to be hidden based on the active theme.
-.only-light
-  display: block !important
-.only-dark
-  display: none !important
+.light
+  .only-light
+    display: block !important
+  .only-dark
+    display: none !important
 
-@media (prefers-color-scheme: dark)
+.dark
   .only-light
     display: none !important
   .only-dark

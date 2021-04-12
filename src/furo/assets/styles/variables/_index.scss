@@ -31,6 +31,88 @@ $admonitions: (
   "admonition-todo": #808080 "pencil"
 );
 
+//////////////////////////////////////////////////////////////////////////////
+// Overall Colors
+//     To give the user more control, avoid using these colors directly
+//     outside of this file. Instead, try to define more variables here that
+//     based on these, and use them in the actual stylesheets.
+//////////////////////////////////////////////////////////////////////////////
+
+:root.light {
+  --color-problematic: #b30000;
+
+  // Base Colors
+  --color-foreground-primary: black; // for main text and headings
+  --color-foreground-secondary: #5a5c63; // for secondary text
+  --color-foreground-muted: #72747e; // for muted text
+  --color-foreground-border: #878787; // for content borders
+
+  --color-background-primary: white; // for content
+  --color-background-secondary: #f8f9fb; // for navigation + ToC
+  --color-background-hover: #efeff4ff; // for navigation-item hover
+  --color-background-hover--transparent: #efeff400;
+  --color-background-border: #eeebee; // for UI borders
+
+  // Announcements
+  --color-announcement-background: #000000dd;
+  --color-announcement-text: #eeebee;
+
+  // Brand colors
+  --color-brand-primary: #2962ff;
+  --color-brand-content: #2a5adf;
+
+  // Highlighted text (search)
+  --color-highlighted-background: #ddeeff;
+
+  // GUI Labels
+  --color-guilabel-background: #ddeeff80;
+  --color-guilabel-border: #bedaf580;
+
+  // API Documentation
+  --color-api-highlight-on-target: #ffffcc;
+
+  // Admonitions
+  --color-admonition-background: transparent;
+}
+
+// @media (prefers-color-scheme: dark) {
+:root.dark {
+  --color-problematic: #e25050;
+
+  // Base Colors
+  --color-foreground-primary: #ffffffd9; // for main text and headings
+  --color-foreground-secondary: #9ca0a5; // for secondary text
+  --color-foreground-muted: #81868d; // for muted text
+  --color-foreground-border: #666666; // for content borders
+
+  --color-background-primary: #131416; // for content
+  --color-background-secondary: #1a1c1e; // for navigation + ToC
+  --color-background-hover: #1e2124ff; // for navigation-item hover
+  --color-background-hover--transparent: #1e212400;
+  --color-background-border: #303335; // for UI borders
+
+  // Announcements
+  --color-announcement-background: #000000dd;
+  --color-announcement-text: #eeebee;
+
+  // Brand colors
+  --color-brand-primary: #2b8cee;
+  --color-brand-content: #368ce2;
+
+  // Highlighted text (search)
+  --color-highlighted-background: #083563;
+
+  // GUI Labels
+  --color-guilabel-background: #08356380;
+  --color-guilabel-border: #13395f80;
+
+  // API documentation
+  --color-api-highlight-on-target: #333300;
+
+  // Admonitions
+  --color-admonition-background: #18181a;
+}
+
 :root {
   //////////////////////////////////////////////////////////////////////////////
   // Fonts
@@ -105,56 +187,23 @@ $admonitions: (
   }
   --icon-admonition-default: var(--icon-#{nth($admonition-default, 2)});
 
-  //////////////////////////////////////////////////////////////////////////////
-  // Overall Colors
-  //     To give the user more control, avoid using these colors directly
-  //     outside of this file. Instead, try to define more variables here that
-  //     based on these, and use them in the actual stylesheets.
-  //////////////////////////////////////////////////////////////////////////////
-  --color-problematic: #b30000;
-
-  // Base Colors
-  --color-foreground-primary: black; // for main text and headings
-  --color-foreground-secondary: #5a5c63; // for secondary text
-  --color-foreground-muted: #72747e; // for muted text
-  --color-foreground-border: #878787; // for content borders
-
-  --color-background-primary: white; // for content
-  --color-background-secondary: #f8f9fb; // for navigation + ToC
-  --color-background-hover: #efeff4ff; // for navigation-item hover
-  --color-background-hover--transparent: #efeff400;
-  --color-background-border: #eeebee; // for UI borders
-
-  // Announcements
-  --color-announcement-background: #000000dd;
-  --color-announcement-text: #eeebee;
-
-  // Brand colors
-  --color-brand-primary: #2962ff;
-  --color-brand-content: #2a5adf;
-
   // API documentation
   --color-api-overall: var(--color-foreground-muted);
   --color-api-name: var(--color-brand-content);
   --color-api-pre-name: var(--color-brand-content);
   --color-api-paren: var(--color-foreground-secondary);
   --color-api-keyword: var(--color-problematic);
-  --color-api-highlight-on-target: #ffffcc;
 
   // Inline code background
   --color-inline-code-background: var(--color-background-secondary);
 
   // Highlighted text (search)
-  --color-highlighted-background: #ddeeff;
   --color-highlighted-text: var(--color-foreground-primary);
 
   // GUI Labels
-  --color-guilabel-background: #ddeeff80;
-  --color-guilabel-border: #bedaf580;
   --color-guilabel-text: var(--color-foreground-primary);
 
   // Admonitions!
-  --color-admonition-background: transparent;
   --color-admonition-title: #{nth($admonition-default, 1)};
   --color-admonition-title-background: #{rgba(nth($admonition-default, 1), 0.1)};
 
@@ -224,43 +273,4 @@ $admonitions: (
   --color-link--hover: var(--color-brand-content);
   --color-link-underline: var(--color-background-border);
   --color-link-underline--hover: var(--color-foreground-border);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-problematic: #e25050;
-
-    // Base Colors
-    --color-foreground-primary: #ffffffd9; // for main text and headings
-    --color-foreground-secondary: #9ca0a5; // for secondary text
-    --color-foreground-muted: #81868d; // for muted text
-    --color-foreground-border: #666666; // for content borders
-
-    --color-background-primary: #131416; // for content
-    --color-background-secondary: #1a1c1e; // for navigation + ToC
-    --color-background-hover: #1e2124ff; // for navigation-item hover
-    --color-background-hover--transparent: #1e212400;
-    --color-background-border: #303335; // for UI borders
-
-    // Announcements
-    --color-announcement-background: #000000dd;
-    --color-announcement-text: #eeebee;
-
-    // Brand colors
-    --color-brand-primary: #2b8cee;
-    --color-brand-content: #368ce2;
-
-    // Highlighted text (search)
-    --color-highlighted-background: #083563;
-
-    // GUI Labels
-    --color-guilabel-background: #08356380;
-    --color-guilabel-border: #13395f80;
-
-    // API documentation
-    --color-api-highlight-on-target: #333300;
-
-    // Admonitions
-    --color-admonition-background: #18181a;
-  }
 }
