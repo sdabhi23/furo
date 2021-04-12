@@ -8,6 +8,7 @@ var rename = require("gulp-rename");
 var sass = require("gulp-sass");
 var sourcemaps = require("gulp-sourcemaps");
 var uglify = require("gulp-uglify");
+var babel = require("gulp-babel");
 
 var Fiber = require("fibers");
 sass.compiler = require("sass");
@@ -34,6 +35,7 @@ function css() {
 function javascript(cb) {
   return gulp
     .src(src_path + "scripts/[!_]*.js", { since: gulp.lastRun(javascript) })
+    .pipe(babel({ presets: ["@babel/preset-env"] }))
     .pipe(sourcemaps.init())
     .pipe(concat("scripts/main.js"))
     .pipe(uglify())
