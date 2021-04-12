@@ -85,6 +85,21 @@ function setupScrollSpy() {
   });
 }
 
+function toggleTheme() {
+  const topNode = document.getElementsByTagName("html")[0];
+  const currentTheme = localStorage.getItem("theme");
+  const currentClass = topNode.className;
+
+  if (currentTheme === "dark") {
+    topNode.className = currentClass.replace("dark", "light");
+    localStorage.setItem("theme", "light");
+  } else if (currentTheme === "light") {
+    topNode.className = currentClass.replace("light", "dark");
+    localStorage.setItem("theme", "dark");
+  }
+  console.log("Toggled theme!");
+}
+
 function loadPygments() {
   fetch("/_static/pygments.css")
     .then((res) => res.text())
@@ -128,6 +143,22 @@ function main() {
 
   header = document.querySelector("header");
   tocScroll = document.querySelector(".toc-scroll");
+
+  const topNode = document.getElementsByTagName("html")[0];
+  var darkTheme = null;
+  if (localStorage.getItem("theme") === undefined) {
+    darkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  } else {
+    darkTheme = localStorage.getItem("theme") === "dark";
+  }
+
+  if (darkTheme) {
+    topNode.className = "dark";
+    localStorage.setItem("theme", "dark");
+  } else {
+    topNode.className = "light";
+    localStorage.setItem("theme", "light");
+  }
 
   setup();
 }
