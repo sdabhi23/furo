@@ -85,6 +85,9 @@ function setupScrollSpy() {
   });
 }
 
+////////////////////////////////////////////////////////////////////////////////
+// Color Theme Handling
+////////////////////////////////////////////////////////////////////////////////
 function toggleTheme() {
   const topNode = document.getElementsByTagName("html")[0];
   const currentTheme = localStorage.getItem("theme");
@@ -100,42 +103,9 @@ function toggleTheme() {
   console.log("Toggled theme!");
 }
 
-function loadPygments() {
-  fetch("/_static/pygments.css")
-    .then((res) => res.text())
-    .then((res) =>
-      res
-        .split("\n")
-        .map((elem) => ".light " + elem)
-        .join("\n")
-    )
-    .then((res) => {
-      var styleSheet = document.createElement("style");
-      styleSheet.innerText = res;
-      document.head.appendChild(styleSheet);
-      console.log(styleSheet);
-    });
-
-  fetch("/_static/pygments_dark.css")
-    .then((res) => res.text())
-    .then((res) =>
-      res
-        .split("\n")
-        .map((elem) => ".dark " + elem)
-        .join("\n")
-    )
-    .then((res) => {
-      var styleSheet = document.createElement("style");
-      styleSheet.innerText = res;
-      document.head.appendChild(styleSheet);
-      console.log(styleSheet);
-    });
-}
-
 function setup() {
   setupScrollHandler();
   setupScrollSpy();
-  loadPygments();
 }
 
 function main() {
@@ -143,22 +113,6 @@ function main() {
 
   header = document.querySelector("header");
   tocScroll = document.querySelector(".toc-scroll");
-
-  const topNode = document.getElementsByTagName("html")[0];
-  var darkTheme = null;
-  if (localStorage.getItem("theme") === undefined) {
-    darkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  } else {
-    darkTheme = localStorage.getItem("theme") === "dark";
-  }
-
-  if (darkTheme) {
-    topNode.className = "dark";
-    localStorage.setItem("theme", "dark");
-  } else {
-    topNode.className = "light";
-    localStorage.setItem("theme", "light");
-  }
 
   setup();
 }
