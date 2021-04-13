@@ -6,7 +6,65 @@
 
     <meta name="generator" content="sphinx-3.5.4, furo 2021.04.11.dev35"/>
         <title>Reference - Furo</title>
-      <link rel="stylesheet" href="../_static/styles/furo.css?digest=f6a7a815595213d77ba9f22adfa6c6431b72e05f">
+      <script>
+      function loadPygments() {
+        fetch("../_static/pygments.css")
+          .then((res) => res.text())
+          .then((res) =>
+            res
+              .split("\n")
+              .map((elem) => ".light " + elem)
+              .join(" ")
+          )
+          .then((res) => {
+            var styleSheet = document.createElement("style");
+            styleSheet.innerText = res;
+            document.head.appendChild(styleSheet);
+            console.log(styleSheet);
+          });
+
+        fetch("../_static/pygments_dark.css")
+          .then((res) => res.text())
+          .then((res) =>
+            res
+              .split("\n")
+              .map((elem) => ".dark " + elem)
+              .join(" ")
+          )
+          .then((res) => {
+            var styleSheet = document.createElement("style");
+            styleSheet.innerText = res;
+            document.head.appendChild(styleSheet);
+            console.log(styleSheet);
+          });
+      }
+
+      document.addEventListener("DOMContentLoaded", loadPygments);
+    </script>
+
+    <script>
+      function setInitialTheme() {
+        const topNode = document.getElementsByTagName("html")[0];
+        
+          var darkTheme = null;
+          if (localStorage.getItem("theme") === undefined) {
+            darkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          } else {
+            darkTheme = localStorage.getItem("theme") === "dark";
+          }
+
+          if (darkTheme) {
+            topNode.className = "dark";
+            localStorage.setItem("theme", "dark");
+          } else {
+            topNode.className = "light";
+            localStorage.setItem("theme", "light");
+          }
+        
+      }
+
+      document.addEventListener("DOMContentLoaded", setInitialTheme);
+    </script><link rel="stylesheet" href="../_static/styles/furo.css?digest=f6a7a815595213d77ba9f22adfa6c6431b72e05f">
     
 
 
@@ -246,5 +304,5 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/tabs.js"></script>
-    <script src="../_static/scripts/main.js?digest=dba1104e84029c9bbe823ec0500d3360bfc27ba2"></script></body>
+    <script src="../_static/scripts/main.js?digest=4c64bbbadd43098406f7f5b18c1b129b9004ce98"></script></body>
 </html>
